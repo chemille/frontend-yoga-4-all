@@ -10,9 +10,17 @@
     width: 100%;
     font-size: 16px;
   }
-  
+  .buttonContainer{
+    display:flex;
+    flex:auto;
+    justify-content: end;
+
+  }
   .navbar-container {
     display: flex;
+    padding-top:4rem;
+    padding-bottom: 4rem;
+    margin-bottom:10px;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;

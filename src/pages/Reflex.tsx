@@ -1,3 +1,5 @@
+import Card from "../components/Card";
+
 export function Reflex() {
-    return <h1>Reflex Page</h1>;
+    return <Card />;
   }
