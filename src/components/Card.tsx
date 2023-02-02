@@ -20,23 +20,26 @@ function Card() {
 
   return (
     <>
-      <section className="card-section">
+    <section className="card-section">
+    {reflexData
+                      ? reflexData.map((reflex) => {
+     return  (
         <div className="card">
           <div className="flip-card">
             <div className="flip-card__container">
               <div className="card-front">
                 <div className="card-front__tp card-front__tp--city">
                   <h2 className="card-front__heading">
-                    {reflexData
-                      ? reflexData.map((reflex) => {
-                          return <p>{reflex.title}</p>;
-                        })
-                      : null}
+                    {/* {reflexData
+                      ? reflexData.map((reflex) => { */}
+                        <p>{reflex.title}</p>
+                        {/* })
+                      : null} */}
                     {/* Need map through cards*/}
                   </h2>
                   <p className="card-front__text-price">Reflex Name</p>
                 </div>
-
+        
                 <div className="card-front__bt">
                   <p className="card-front__text-view card-front__text-view--city">
                     View me
@@ -67,7 +70,10 @@ function Card() {
             </div>
           </div>
         </div>
-      </section>
+     );
+          })
+          : null}
+          </section>
     </>
   );
 }

@@ -17,6 +17,7 @@ const Button = styled(NavLink)`
 const Home = styled(NavLink)`
     color: white;
     font-size: 48px;
+    margin-left: 2rem;
 `;
 const StyledNav = styled.nav`
 background-color: pink; 
