@@ -5,7 +5,6 @@ import { MyAccount } from "./pages/MyAccount";
 import { Diary } from "./pages/Diary";
 import Home from "./components/Home";
 
-
 export function App() {
 
   return (

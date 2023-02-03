@@ -19,7 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "noImplicitAny": false // once you are comfortable with your build and deployment of the app, return to this setting and set it to true
+    "noImplicitAny": true // once you are comfortable with your build and deployment of the app, return to this setting and set it to true
   },
   "include": [
     "src"

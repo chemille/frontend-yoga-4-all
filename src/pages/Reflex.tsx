@@ -1,6 +1,7 @@
 import Home from "../components/Home";
-import axios from "axios";
-import { useState, useEffect } from "react";
+// import axios from "axios";
+// import { useState, useEffect } from "react";
+import downwardDog from "./resources/downwardDog.jpg";
 
 // export type oneReflex = {
 //     reflex_id: number;
@@ -19,5 +20,12 @@ export function Reflex() {
     // }, []);
     // console.log(oneReflex);
 
-        return <h1>Beep Boop</h1>;
-    }
+    return (
+        <div>
+            <h1>Reflex</h1>
+        <div> 
+        <img src={downwardDog} alt=""/>
+        </div>
+        </div>
+    );
+}

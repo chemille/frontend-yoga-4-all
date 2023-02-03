@@ -23,7 +23,7 @@ function Home() {
     <section className="card-section">
     {reflexData
                       ? reflexData.map((reflex) => {
-     return  (
+    return  (
         <div className="card">
           <div className="flip-card">
             <div className="flip-card__container">
