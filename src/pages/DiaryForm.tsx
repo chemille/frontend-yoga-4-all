@@ -5,7 +5,7 @@ const defaultFormData = {
   posted_at: ""
 }
 
-export function Diary() {
+export function DiaryForm() {
     const[formData, setFormData] = useState(defaultFormData);
     const { entry, posted_at } = formData
 
