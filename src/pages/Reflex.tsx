@@ -19,5 +19,8 @@ export function Reflex() {
     // }, []);
     // console.log(oneReflex);
 
-        return <h1>Beep Boop</h1>;
+        return <>
+        <h1>Beep Boop</h1>
+        
+        </>;
     }

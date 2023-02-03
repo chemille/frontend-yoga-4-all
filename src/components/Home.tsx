@@ -47,7 +47,7 @@ function Home() {
                 </div>
               </div>
               <div className="card-back">
-                <img className="img_area" src="" />
+                <img className="img_area" src="https://imgur.com/YJzynW4.jpg" alt='pose' />
               </div>
             </div>
           </div>
