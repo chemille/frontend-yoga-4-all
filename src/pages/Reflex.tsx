@@ -1,5 +1,23 @@
-import Card from "../components/Card";
+import Home from "../components/Home";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
+// export type oneReflex = {
+//     reflex_id: number;
+//     title: string;
+//     education: string;
+//     videos: Array<string>;
+// };
+    
 export function Reflex() {
-    return <Card />;
-  }
+    // const [oneReflex, setOneReflex] = useState<oneReflex>();
+    // useEffect(() => {
+    //     const url = `https://yoga-4-all-backend.herokuapp.com/${oneReflex}`;
+    //     axios.get(url).then((response) => {
+    //         setOneReflex(response.data);
+    //     });
+    // }, []);
+    // console.log(oneReflex);
+
+        return <h1>Beep Boop</h1>;
+    }

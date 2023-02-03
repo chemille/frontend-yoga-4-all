@@ -8,7 +8,7 @@ export type ReflexList = {
   title: string;
 };
 
-function Card() {
+function Home() {
   const [reflexData, setReflexData] = useState<ReflexList[] | null>();
   useEffect(() => {
     const url = "https://yoga-4-all-backend.herokuapp.com/reflex";
@@ -62,7 +62,7 @@ function Card() {
                 matter what time!
               </p>
               <a
-                href="/STNR"
+                href={`/${reflex.title}`} // gives you the name of the reflex as the endpoint
                 className="inside-page__btn inside-page__btn--city"
               >
                 View deals
@@ -78,4 +78,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default Home;

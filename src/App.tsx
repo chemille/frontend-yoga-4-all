@@ -3,6 +3,7 @@ import { NavBar } from "./Navbar";
 import { Reflex } from "./pages/Reflex";
 import { MyAccount } from "./pages/MyAccount";
 import { Diary } from "./pages/Diary";
+import Home from "./components/Home";
 
 
 export function App() {
@@ -13,6 +14,10 @@ export function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact>
+            <Home />
+          </Route>
+{/* this needs to be changed too the exact route of the page which matches the title to the reflex */}
+          <Route path="/Reflex" exact>
             <Reflex />
           </Route>
           <Route path="/myaccount">
