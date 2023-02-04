@@ -24,7 +24,7 @@ export function App() {
           </Route>
           <Route path="/diary">
             <DiaryForm />
-          </Route>
+          </Route> 
         </Switch>
       </BrowserRouter>
     </>

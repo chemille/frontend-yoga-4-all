@@ -1,21 +1,32 @@
 import React from "react";
 import "./cardStyles.css";
-import axios from "axios";
+// import axios from "axios";
 import { useState, useEffect } from "react";
+import { fetchReflexData } from "../services/Api";
+import { ReflexList } from "../types/reflex";
 
-export type ReflexList = {
-  reflex_id: number;
-  title: string;
-};
+// export type ReflexList = {
+//   reflex_id: number;
+//   title: string;
+// };
 
 function Home() {
   const [reflexData, setReflexData] = useState<ReflexList[] | null>();
   useEffect(() => {
-    const url = "https://yoga-4-all-backend.herokuapp.com/reflex";
-    axios.get(url).then((response) => {
-      setReflexData(response.data);
-    });
-  }, []);
+    const fetchData = async () => {
+      const data = await fetchReflexData()
+      setReflexData(data);
+    }
+    fetchData();
+  }, [])
+
+
+  // useEffect(() => {
+    // const url = "https://yoga-4-all-backend.herokuapp.com/reflex";
+    // axios.get(url).then((response) => {
+    //   setReflexData(response.data);
+    // });
+  // }, []);
   console.log(reflexData);
 
   return (
