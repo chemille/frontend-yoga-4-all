@@ -6,7 +6,7 @@ module.exports = {
     rules: [
       {
         test: /\\.(png|jp(e*)g|svg|gif)$/,
-        use: '"file-loader"',
+        use: "file-loader",
         // exclude: /node_modules/,
       },
       // { test: /\\.(png|jp(e*)g|svg|gif)$/, use: ["file-loader"] },
