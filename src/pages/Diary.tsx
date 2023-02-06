@@ -1,15 +1,27 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Entry } from '../types/entry';
-// import { fetchAllEntries } from '../services/Api';
+import { fetchAllEntries } from '../services/Api';
 import { DiaryForm } from '../components/DiaryForm';
 import DiaryEntries from "../components/DiaryEntries";
 // import axios from 'axios';
 // export{}
 
+
 export const Diary: React.FC = () => {
     const [entry, setEntry] = useState<string>("");
     const [entries, setEntries] = useState<Entry[]>([]);
-  
+
+    // GET ALL ENTRIES //
+    useEffect(() => {
+      const fetchEntries = async () => {
+          const entries = await fetchAllEntries()
+          setEntries(entries);
+      }
+      fetchEntries();
+      }, [])
+      
+      console.log(entries);
+    ///////////////////////
     const handleAdd = (e: React.FormEvent) => {
       e.preventDefault();
   
