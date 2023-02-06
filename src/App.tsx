@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { NavBar } from "./Navbar";
 import { Reflex } from "./pages/Reflex";
 import { MyAccount } from "./pages/MyAccount";
-import { DiaryEntries } from "./pages/DiaryEntries";
+import { Diary } from "./pages/Diary";
 import Home from "./components/Home";
 
 export function App() {
@@ -23,7 +23,7 @@ export function App() {
             <MyAccount />
           </Route>
           <Route path="/diary">
-            <DiaryEntries />
+            <Diary />
           </Route> 
         </Switch>
       </BrowserRouter>
