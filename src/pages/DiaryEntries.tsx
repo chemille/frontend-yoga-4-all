@@ -15,8 +15,7 @@ export function DiaryEntries() {
     fetchEntries();
     }, [])
 
-    // console.log(entryData);
-
+    // DELETE ONE ENTRY
 
     return (
         <section>
