@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { DiaryEntry } from '../types/entry';
-import { fetchAllEntries, createNewEntry } from '../services/Api';
+import { fetchAllEntries } from '../services/Api';
 import { DiaryForm } from '../components/DiaryForm';
 import DiaryEntries from "../components/DiaryEntries";
 import { SingleEntry } from '../components/SingleEntry';
-// import axios from 'axios';
+import axios from 'axios';
 // export{}
 
 
@@ -37,15 +37,31 @@ export const Diary: React.FC = () => {
     //     createNewEntry()
     //   } 
     // }, [])
-
+    const createNewEntry = (newEntry: any)=> {
+      const url = "https://yoga-4-all-backend.herokuapp.com/diary";
+      axios.post(url, newEntry)
+      .then(response => {
+          const newEntry = [...entries];
+          newEntry.push({
+              diary_id: response.data.diary_id,
+              entry: response.data.entry,
+              posted_at: response.data.posted_at
+      });
+      setEntries(newEntry);
+      }) 
+      .catch(error => {
+          console.log(error);
+      });
+      
+      console.log(newEntry.data);
+      return newEntry.data;
+      };
     ///////////////////////
     const handleAdd = (e: React.FormEvent) => {
       e.preventDefault();
-      // createNewEnty()
-      // if (entry) {
-      //   setEntries([...entries, { diary_id, entry: entry, posted_at }]);
-      //   setEntry("");
-      // }
+    
+      createNewEntry(FormData) // make a state to hold formData and use the setters that you get back from the state to keep track
+      // then send that formData back inside of that fx
     };
   
     return (

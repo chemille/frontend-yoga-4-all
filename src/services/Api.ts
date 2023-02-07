@@ -29,10 +29,22 @@ export const getOneEntry = async (): Promise<DiaryEntry[]> => {
 }
 
 // CREATE NEW DIARY ENTRY
-export const createNewEntry = async (): Promise<DiaryEntry[]> => {
-    const url = "https://yoga-4-all-backend.herokuapp.com/diary";
-    const newEntry = await axios.post(url) // put json body right after url
+// export const createNewEntry = async (newEntry): Promise<DiaryEntry[]> => {
+//     const url = "https://yoga-4-all-backend.herokuapp.com/diary";
+//     axios.post(url, newEntry)
+//     .then(response => {
+//         const newEntry = [...entries];
+//         newEntry.push({
+//             entry: response.data.entry,
+//             posted_at: response.data.posted_at,
+//             ...entries
+//     });
+//     setEntries(newEntry);
+//     }) 
+//     .catch(error => {
+//         console.log(error);
+//     });
     
-    console.log(newEntry.data);
-    return newEntry.data;
-}
+//     console.log(newEntry.data);
+//     return newEntry.data;
+//     };
