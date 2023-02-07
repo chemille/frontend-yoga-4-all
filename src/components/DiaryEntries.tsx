@@ -1,20 +1,21 @@
 import React from "react";
-import { Entry } from "../types/entry";
+import { DiaryEntry } from "../types/entry";
 import { SingleEntry } from "./SingleEntry";
 
 interface props {
-  entries: Entry[];
-  setEntries: React.Dispatch<React.SetStateAction<Entry[]>>;
+  entries: DiaryEntry[];
+  setEntries: React.Dispatch<React.SetStateAction<DiaryEntry[]>>;
 }
 
 const DiaryEntries: React.FC<props> = ({ entries, setEntries }) => {
+
   return (
     <div className="todos">
       {entries?.map((entry) => (
         <SingleEntry
           entries={entries}
           entry={entry}
-          key={entry.id}
+          key={entry.diary_id}
           setEntries={setEntries}
         />
       ))}

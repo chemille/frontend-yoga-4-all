@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
-import { MdDone } from "react-icons/md";
-import { Entry } from "../types/entry";
+// import { MdDone } from "react-icons/md";
+import { DiaryEntry } from "../types/entry";
 
 export const SingleEntry: React.FC<{
-  entry: Entry;
-  entries: Entry[];
-  setEntries: React.Dispatch<React.SetStateAction<Entry[]>>;
+  entry: DiaryEntry;
+  entries: DiaryEntry[];
+  setEntries: React.Dispatch<React.SetStateAction<DiaryEntry[]>>;
 }> = ({ entry, entries, setEntries }) => {
   const [edit, setEdit] = useState<boolean>(false);
   const [editEntry, setEditEntry] = useState<string>(entry.entry);
@@ -17,30 +17,30 @@ export const SingleEntry: React.FC<{
     inputRef.current?.focus();
   }, [edit]);
 
-  const handleEdit = (e: React.FormEvent, id: number) => {
+  const handleEdit = (e: React.FormEvent, id: number) => { // id here stays as id 
     e.preventDefault();
     setEntries(
       entries.map((entry) =>
-        entry.id === id ? { ...entry, entry: editEntry } : entry
+        entry.diary_id === id ? { ...entry, entry: editEntry } : entry
       )
     );
     setEdit(false);
   };
 
-  const handleDelete = (id: number) => {
-    setEntries(entries.filter((entry) => entry.id !== id));
+  const handleDelete = (id: number) => { // id here stays as id
+    setEntries(entries.filter((entry) => entry.diary_id !== id));
   };
 
-  const handleDone = (id: number) => {
-    setEntries(
-      entries.map((entry) =>
-        entry.id === id ? { ...entry, isDone: !entry.isDone } : entry
-      )
-    );
-  };
+  // const handleDone = (id: number) => { 
+  //   setEntries(
+  //     entries.map((entry) =>
+  //       entry.diary_id === id ? { ...entry, posted_at: !entry.posted_at } : entry
+  //     )
+  //   );
+  // };
 
   return (
-    <form className="todos__single" onSubmit={(e) => handleEdit(e, entry.id)}>
+    <form className="todos__single" onSubmit={(e) => handleEdit(e, entry.diary_id)}>
       {edit ? (
         <input
           value={editEntry}
@@ -48,8 +48,8 @@ export const SingleEntry: React.FC<{
           className="todos__single--text"
           ref={inputRef}
         />
-      ) : entry.isDone ? (
-        <s className="todos__single--text">{entry.entry}</s>
+      ) : entry.posted_at ? (
+        <span className="todos__single--text">{entry.entry}</span>
       ) : (
         <span className="todos__single--text">{entry.entry}</span>
       )}
@@ -57,19 +57,18 @@ export const SingleEntry: React.FC<{
         <span
           className="icon"
           onClick={() => {
-            if (!edit && !entry.isDone) {
+            if (!edit) {
               setEdit(!edit);
             }
           }}
         >
           <AiFillEdit />
         </span>
-        <span className="icon" onClick={() => handleDelete(entry.id)}>
+        <span className="icon" onClick={() => handleDelete(entry.diary_id)}>
           <AiFillDelete />
         </span>
-        <span className="icon" onClick={() => handleDone(entry.id)}>
-          <MdDone />
-        </span>
+        {/* <span className="icon" onClick={() => handleDone(entry.diary_id)}> */}
+          {/* <MdDone /> */}
       </div>
     </form>
   );

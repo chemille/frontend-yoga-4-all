@@ -1,6 +1,5 @@
 import React from "react";
 import "./cardStyles.css";
-// import axios from "axios";
 import { useState, useEffect } from "react";
 import { fetchReflexData } from "../services/Api";
 import { ReflexList } from "../types/reflex";
@@ -48,7 +47,7 @@ function Home() {
                       : null} */}
                     {/* Need map through cards*/}
                   </h2>
-                  <p className="card-front__text-price">Reflex Name</p>
+
                 </div>
         
                 <div className="card-front__bt">
@@ -58,7 +57,8 @@ function Home() {
                 </div>
               </div>
               <div className="card-back">
-                <img className="img_area" src="https://imgur.com/YJzynW4.jpg" alt='pose' />
+                {/* <img className="img_area" src="https://imgur.com/YJzynW4.jpg" alt='pose' /> */}
+                <img src="https://imgur.com/YJzynW4.jpg" alt="Downward Dog" className="image" />
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ function Home() {
           <div className="inside-page">
             <div className="inside-page__container">
               <h3 className="inside-page__heading inside-page__heading--city">
-                For urban lovers
+                For {reflex.title}
               </h3>
               <p className="inside-page__text">
                 As cities never sleep, there are always something going on, no
@@ -81,7 +81,7 @@ function Home() {
             </div>
           </div>
         </div>
-     );
+      );
           })
           : null}
           </section>
