@@ -22,21 +22,7 @@ export const Diary: React.FC = () => {
       }, [])
     
       console.log(entries);
-    ///////////////////////
 
-    // useEffect(() => {
-    //   const postNewEntry = async () => {
-    //     // how do we push a new entry into the exisiting entries? 
-    //     const newEntry = await createNewEntry()
-    //     if (entry) {
-    //       setEntries([...entries, { id: Date.now(), entry, isDone: false }]);
-    //       setEntry("");
-    //     newEntry.push();
-    //     // createNewEntry(entry);
-    //     }
-    //     createNewEntry()
-    //   } 
-    // }, [])
     const createNewEntry = (newEntry: any)=> {
       const url = "https://yoga-4-all-backend.herokuapp.com/diary";
       axios.post(url, newEntry)
@@ -56,7 +42,7 @@ export const Diary: React.FC = () => {
       console.log(newEntry.data);
       return newEntry.data;
       };
-    ///////////////////////
+    // do we need this handleAdd?? //
     const handleAdd = (e: React.FormEvent) => {
       e.preventDefault();
     

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
-// import { MdDone } from "react-icons/md";
 import { DiaryEntry } from "../types/entry";
+import axios from 'axios';
 
 export const SingleEntry: React.FC<{
   entry: DiaryEntry;
@@ -17,27 +17,32 @@ export const SingleEntry: React.FC<{
     inputRef.current?.focus();
   }, [edit]);
 
-  const handleEdit = (e: React.FormEvent, id: number) => { // id here stays as id 
+  const handleEdit = (e: React.FormEvent, id: number) => {
     e.preventDefault();
-    setEntries(
-      entries.map((entry) =>
-        entry.diary_id === id ? { ...entry, entry: editEntry } : entry
-      )
-    );
+    const url = `https://yoga-4-all-backend.herokuapp.com/diary/${id}`;
+    axios.put(url, { entry: editEntry })
+    .then((response) => {
+      setEntries(
+        entries.map((entry) =>
+          entry.diary_id === id ? { ...entry, entry: editEntry } : entry
+        )
+      );
+    })
     setEdit(false);
   };
 
-  const handleDelete = (id: number) => { // id here stays as id
-    setEntries(entries.filter((entry) => entry.diary_id !== id));
+  const handleDelete = (id: number) => { 
+    const url = `https://yoga-4-all-backend.herokuapp.com/diary/${id}`;
+    axios
+      .delete(url)
+      .then(() => {
+        // setEntries(entries.filter((entry) => entry.diary_id !== id));
+        setEntries((entries) => entries.filter((entry) => entry.diary_id !== id));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
-
-  // const handleDone = (id: number) => { 
-  //   setEntries(
-  //     entries.map((entry) =>
-  //       entry.diary_id === id ? { ...entry, posted_at: !entry.posted_at } : entry
-  //     )
-  //   );
-  // };
 
   return (
     <form className="todos__single" onSubmit={(e) => handleEdit(e, entry.diary_id)}>
@@ -67,10 +72,7 @@ export const SingleEntry: React.FC<{
         <span className="icon" onClick={() => handleDelete(entry.diary_id)}>
           <AiFillDelete />
         </span>
-        {/* <span className="icon" onClick={() => handleDone(entry.diary_id)}> */}
-          {/* <MdDone /> */}
       </div>
     </form>
   );
 };
-

@@ -32,14 +32,7 @@ export const DiaryForm: React.FC<props> = ({ entry, setEntry, handleAdd }) => {
     const url = "https://yoga-4-all-backend.herokuapp.com/diary";
     axios.post(url, { ...formData, posted_at: new Date() })
     .then(response => {
-    //     const newEntry = [...entries]; // same thing as line 21
-    //     newEntry.push({
-    //         diary_id: response.data.diary_id,
-    //         entry: response.data.entry,
-    //         posted_at: response.data.posted_at
-    // });
-    // setEntries(newEntry);
-    console.log(response.data);
+      console.log(response.data);
     }) 
     .catch(error => {
         console.log(error);

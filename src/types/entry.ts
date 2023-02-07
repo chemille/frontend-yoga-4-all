@@ -4,9 +4,3 @@ export interface DiaryEntry { // previously Entry
     posted_at: string;
 };
 
-// export interface Entry {
-//     id: number;
-//     entry: string; // todo
-//     isDone: boolean;
-//   }
-  
