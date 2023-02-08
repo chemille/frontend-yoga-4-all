@@ -53,7 +53,7 @@ export const DiaryForm: React.FC<props> = ({ entry, setEntry, handleAdd }) => {
     >
       <input
         type="text"
-        placeholder="Enter an Entry"
+        placeholder="Type your entry here."
         value={formData.entry}
         name="entry"
         ref={inputRef}
@@ -61,7 +61,7 @@ export const DiaryForm: React.FC<props> = ({ entry, setEntry, handleAdd }) => {
         className="input__box"
       />
       <button type="submit" className="input_submit">
-        GO
+        Submit
       </button>
     </form>
   );

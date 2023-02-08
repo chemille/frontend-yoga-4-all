@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { DiaryEntry } from "../types/entry";
 import axios from 'axios';
+import "./diaryStyles.css";
 
 export const SingleEntry: React.FC<{
   entry: DiaryEntry;
@@ -45,18 +46,18 @@ export const SingleEntry: React.FC<{
   };
 
   return (
-    <form className="todos__single" onSubmit={(e) => handleEdit(e, entry.diary_id)}>
+    <form className="entries__single" onSubmit={(e) => handleEdit(e, entry.diary_id)}>
       {edit ? (
         <input
           value={editEntry}
           onChange={(e) => setEditEntry(e.target.value)}
-          className="todos__single--text"
+          className="entries__single--text"
           ref={inputRef}
         />
       ) : entry.posted_at ? (
-        <span className="todos__single--text">{entry.entry}</span>
+        <span className="entries__single--text">{entry.entry}</span>
       ) : (
-        <span className="todos__single--text">{entry.entry}</span>
+        <span className="entries__single--text">{entry.entry}</span>
       )}
       <div>
         <span

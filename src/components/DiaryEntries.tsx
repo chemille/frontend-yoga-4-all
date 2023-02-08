@@ -10,7 +10,7 @@ interface props {
 const DiaryEntries: React.FC<props> = ({ entries, setEntries }) => {
 
   return (
-    <div className="todos">
+    <div className="entries">
       {entries?.map((entry) => (
         <SingleEntry
           entries={entries}

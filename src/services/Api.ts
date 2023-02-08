@@ -11,6 +11,14 @@ export const fetchReflexData = async (): Promise<ReflexList[]> => {
     return reflexData.data;
 }
 
+// GET one reflex
+export const fetchOneReflex = async (): Promise<ReflexList[]> => {
+    const url = `https://yoga-4-all-backend.herokuapp.com/reflex/<reflex_id>`;
+    const reflex = await axios.get(url)
+
+    return reflex.data;
+}
+
 // GET ALL DIARY ENTRIES
 export const fetchAllEntries = async (): Promise<DiaryEntry[]> => {
     const url = "https://yoga-4-all-backend.herokuapp.com/diary";

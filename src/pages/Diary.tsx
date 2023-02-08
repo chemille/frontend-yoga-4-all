@@ -52,7 +52,7 @@ export const Diary: React.FC = () => {
   
     return (
       <div className="App">
-        <span className="heading">Diary Entries Page</span>
+        <h1 className="heading">Diary Entries Page</h1>
         {/* <SingleEntry createNewEntry={createNewEntry} /> */}
         <DiaryForm entry={entry} setEntry={setEntry} handleAdd={handleAdd} />
         <DiaryEntries entries={entries} setEntries={setEntries} />
