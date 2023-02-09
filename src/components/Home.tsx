@@ -2,9 +2,8 @@ import React from "react";
 import "./cardStyles.css";
 import { useState, useEffect } from "react";
 import { fetchReflexData } from "../services/Api";
-// import { ReflexList } from "../types/reflex";
 import { MultipleReflexes } from "../types/reflex";
-// import { Reflex } from "../pages/Reflex";
+import downwardDog from "../resources/downwardDog.jpg";
 
 function Home() {
   const [reflexData, setReflexData] = useState<MultipleReflexes[] | null>();
@@ -48,8 +47,9 @@ function Home() {
                 </div>
               </div>
               <div className="card-back">
+                {/* Currently hard-coded to render image */}
                 {/* <img className="img_area" src="https://imgur.com/YJzynW4.jpg" alt='pose' /> */}
-                <img src="https://imgur.com/YJzynW4.jpg" alt="Downward Dog" className="image" />
+                <img src={downwardDog} alt="Downward Dog" className="image" />
               </div>
             </div>
           </div>
