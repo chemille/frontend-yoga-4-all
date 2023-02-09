@@ -1,26 +1,35 @@
+// import { useState } from "react";
 import Home from "../components/Home";
 // import { fetchOneReflex } from '../services/Api';
 import { ReflexList } from '../types/reflex';
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { fetchOneReflex } from "../services/Api";
 // import downwardDog from "./resources/downwardDog.jpg";
 
-export const Reflex = () => {
 
-    // const [oneReflex, setOneReflex] = useState<ReflexList[]>([]);
+export const Reflex = (props: any) => {
+    const params = props.match.params
 
-    // useEffect(() => {
-    //     const getOneReflex = async () => {
-    //         const oneReflex = await fetchOneReflex()
-    //         setOneReflex(oneReflex);
-    //     }
-    //     getOneReflex();
-    //     }, [])
+    const [oneReflex, setOneReflex] = useState<ReflexList | undefined>(undefined); // Is ReflexList one or all?
+
+    useEffect(() => {
+        const getOneReflex = async () => {
+            const oneReflex = await fetchOneReflex(params.reflexId)
+            console.log(oneReflex)
+            setOneReflex(oneReflex);
+        }
+        getOneReflex();
+    }, [params])
     
     //     console.log("oneReflex", oneReflex);
 
+    if(oneReflex === undefined){
+        return <div>Loading...</div>
+    }
+
     return (
         <div>
-            <h1>Reflex</h1>    
+            <h1>Reflex: {oneReflex.title}</h1>    
         </div> 
         );
     };

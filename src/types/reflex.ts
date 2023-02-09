@@ -4,3 +4,8 @@ export interface ReflexList {
     videos: Array<string>;
     education: string;
   };
+
+  export interface MultipleReflexes {
+    id: number;
+    title: string;
+  }

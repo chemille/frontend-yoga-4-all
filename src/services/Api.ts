@@ -1,10 +1,10 @@
 import axios from "axios";
-import { ReflexList } from "../types/reflex";
+import { ReflexList, MultipleReflexes } from "../types/reflex";
 import { DiaryEntry } from "../types/entry";
 // import { useState } from "react";
 
 // GET all reflexes
-export const fetchReflexData = async (): Promise<ReflexList[]> => {
+export const fetchReflexData = async (): Promise<MultipleReflexes[]> => {
     const url = "https://yoga-4-all-backend.herokuapp.com/reflex";
     const reflexData = await axios.get(url)
 
@@ -12,11 +12,11 @@ export const fetchReflexData = async (): Promise<ReflexList[]> => {
 }
 
 // GET one reflex
-export const fetchOneReflex = async (): Promise<ReflexList[]> => {
-    const url = `https://yoga-4-all-backend.herokuapp.com/reflex/<reflex_id>`;
+export const fetchOneReflex = async (reflexId: string): Promise<ReflexList> => {
+    const url = `https://yoga-4-all-backend.herokuapp.com/reflex/${reflexId}`; // need to string interpolate
     const reflex = await axios.get(url)
 
-    return reflex.data;
+    return reflex.data.reflex;
 }
 
 // GET ALL DIARY ENTRIES

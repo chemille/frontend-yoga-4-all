@@ -16,9 +16,13 @@ export function App() {
             <Home />
           </Route>
 {/* this needs to be changed too the exact route of the page which matches the title to the reflex */}
-          <Route path="/Reflex" exact>
+          {/* <Route path="/Reflex" exact>
             <Reflex />
-          </Route>
+
+          </Route> */}
+          <Route path="/Reflex/:reflexId" component={Reflex} />
+            {/* <Reflex />
+          </Route> */}
           <Route path="/myaccount">
             <MyAccount />
           </Route>

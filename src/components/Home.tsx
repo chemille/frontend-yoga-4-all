@@ -2,12 +2,13 @@ import React from "react";
 import "./cardStyles.css";
 import { useState, useEffect } from "react";
 import { fetchReflexData } from "../services/Api";
-import { ReflexList } from "../types/reflex";
+// import { ReflexList } from "../types/reflex";
+import { MultipleReflexes } from "../types/reflex";
 // import { Reflex } from "../pages/Reflex";
 
 function Home() {
-  const [reflexData, setReflexData] = useState<ReflexList[] | null>();
-
+  const [reflexData, setReflexData] = useState<MultipleReflexes[] | null>();
+  // {id: number, title: string}
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchReflexData()
@@ -63,7 +64,7 @@ function Home() {
                 matter what time!
               </p>
               <a
-                href={`/${reflex.title}`} // gives you the name of the reflex as the endpoint
+                href={`/Reflex/${reflex.id}`} // gives you the name of the reflex as the endpoint
                 className="inside-page__btn inside-page__btn--city"
               >
                 View deals
