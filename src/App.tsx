@@ -4,6 +4,7 @@ import { Reflex } from "./pages/Reflex";
 import { MyAccount } from "./pages/MyAccount";
 import { Diary } from "./pages/Diary";
 import Home from "./components/Home";
+import UserLogin from "./components/UserLogin";
 
 export function App() {
 
@@ -28,6 +29,10 @@ export function App() {
           </Route>
           <Route path="/diary">
             <Diary />
+          {/* Added route for userlogin */}
+          </Route> 
+          <Route path="/userlogin">
+            <UserLogin />
           </Route> 
         </Switch>
       </BrowserRouter>
