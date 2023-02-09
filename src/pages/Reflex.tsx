@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { fetchOneReflex } from "../services/Api";
 // import downwardDog from "./resources/downwardDog.jpg";
 
+
 export const Reflex = (props: any) => {
   const params = props.match.params;
 
@@ -45,9 +46,8 @@ export const Reflex = (props: any) => {
             // frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             // allowfullscreen
-          ></iframe>
-          {/* {oneReflex.videos} */}
-        </div>
+          ></iframe> 
+      </div>
       </div>
       <div>
         <h3>Education: {oneReflex.education}</h3>

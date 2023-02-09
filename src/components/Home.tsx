@@ -4,6 +4,12 @@ import { useState, useEffect } from "react";
 import { fetchReflexData } from "../services/Api";
 import { MultipleReflexes } from "../types/reflex";
 import downwardDog from "../resources/downwardDog.jpg";
+import styled from "styled-components";
+
+
+
+
+
 
 function Home() {
   const [reflexData, setReflexData] = useState<MultipleReflexes[] | null>();
@@ -17,6 +23,7 @@ function Home() {
   }, [])
 
   console.log("reflexData", reflexData);
+  
 
   return (
     <>
@@ -29,14 +36,14 @@ function Home() {
             <div className="flip-card__container">
               <div className="card-front">
                 <div className="card-front__tp card-front__tp--city">
-                  <h2 className="card-front__heading">
+                  <div className="cardFont">
                     {/* {reflexData
                       ? reflexData.map((reflex) => { */}
                         <p>{reflex.title}</p>
                         {/* })
                       : null} */}
                     {/* Need map through cards*/}
-                  </h2>
+                  </div>
 
                 </div>
         
@@ -49,7 +56,7 @@ function Home() {
               <div className="card-back">
                 {/* Currently hard-coded to render image */}
                 {/* <img className="img_area" src="https://imgur.com/YJzynW4.jpg" alt='pose' /> */}
-                <img src={downwardDog} alt="Downward Dog" className="image" />
+                <img src={downwardDog} alt="Downward Dog" className="imageContainer" />
               </div>
             </div>
           </div>
