@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import Home from "../components/Home";
 // import { fetchOneReflex } from '../services/Api';
-import { ReflexList } from '../types/reflex';
+import { SingleReflex } from '../types/reflex';
 import { useState, useEffect } from "react";
 import { fetchOneReflex } from "../services/Api";
 // import downwardDog from "./resources/downwardDog.jpg";
@@ -10,7 +10,7 @@ import { fetchOneReflex } from "../services/Api";
 export const Reflex = (props: any) => {
     const params = props.match.params
 
-    const [oneReflex, setOneReflex] = useState<ReflexList | undefined>(undefined); // Is ReflexList one or all?
+    const [oneReflex, setOneReflex] = useState<SingleReflex | undefined>(undefined); 
 
     useEffect(() => {
         const getOneReflex = async () => {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ReflexList, MultipleReflexes } from "../types/reflex";
+import { SingleReflex, MultipleReflexes } from "../types/reflex";
 import { DiaryEntry } from "../types/entry";
 // import { useState } from "react";
 
@@ -12,7 +12,7 @@ export const fetchReflexData = async (): Promise<MultipleReflexes[]> => {
 }
 
 // GET one reflex
-export const fetchOneReflex = async (reflexId: string): Promise<ReflexList> => {
+export const fetchOneReflex = async (reflexId: string): Promise<SingleReflex> => {
     const url = `https://yoga-4-all-backend.herokuapp.com/reflex/${reflexId}`; // need to string interpolate
     const reflex = await axios.get(url)
 
