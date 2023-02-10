@@ -7,19 +7,13 @@ const UserLogin: any = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate()
 
-    // const navigate = useNavigate()
-
+    console.log("Deploy Testing");
+    
     const login = (e: any) => {
         e.preventDefault();
         navigate('/')
-        // return (
-        //     <Route exact path="/" render={() => (
-        //         <Redirect to="/" />
-        //     )} />
-        // )
+
     };
-        // console.log({email, password});
-    
 
     return (
         <div>
