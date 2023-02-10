@@ -6,6 +6,6 @@ export interface SingleReflex { // previously ReflexList
   };
 
   export interface MultipleReflexes {
-    id: number;
+    reflex_id: number;
     title: string;
   }

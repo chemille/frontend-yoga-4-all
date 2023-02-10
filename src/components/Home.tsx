@@ -71,7 +71,7 @@ function Home() {
                 matter what time!
               </p>
               <a
-                href={`/Reflex/${reflex.id}`} // gives you the name of the reflex as the endpoint
+                href={`/Reflex/${reflex.reflex_id}`} // gives you the name of the reflex as the endpoint
                 className="inside-page__btn inside-page__btn--city"
               >
                 View deals
