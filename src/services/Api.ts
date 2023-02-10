@@ -12,7 +12,7 @@ export const fetchReflexData = async (): Promise<MultipleReflexes[]> => {
 }
 
 // GET one reflex
-export const fetchOneReflex = async (reflexId: string): Promise<SingleReflex> => {
+export const fetchOneReflex = async (reflexId: any): Promise<SingleReflex> => {
     const url = `https://yoga-4-all-backend.herokuapp.com/reflex/${reflexId}`; // need to string interpolate
     const reflex = await axios.get(url)
 

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { NavBar } from "./Navbar";
 import { Reflex } from "./pages/Reflex";
 import { MyAccount } from "./pages/MyAccount";
@@ -10,32 +10,14 @@ export function App() {
 
   return (
     <>
-      <BrowserRouter>
         <NavBar />
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-{/* this needs to be changed too the exact route of the page which matches the title to the reflex */}
-          {/* <Route path="/Reflex" exact>
-            <Reflex />
-
-          </Route> */}
-          <Route path="/Reflex/:reflexId" component={Reflex} />
-            {/* <Reflex />
-          </Route> */}
-          <Route path="/myaccount">
-            <MyAccount />
-          </Route>
-          <Route path="/diary">
-            <Diary />
-          {/* Added route for userlogin */}
-          </Route> 
-          <Route path="/userlogin">
-            <UserLogin />
-          </Route> 
-        </Switch>
-      </BrowserRouter>
+        <Routes>
+          <Route path="/" element = {<Home />} />
+          <Route path="/userlogin" element={<UserLogin />} />
+          <Route path="/Reflex/:reflexId" element={<Reflex />} />
+          <Route path="/myaccount" element={<MyAccount />} />
+          <Route path="/diary" element={<Diary />} />
+        </Routes>
     </>
   );
 }

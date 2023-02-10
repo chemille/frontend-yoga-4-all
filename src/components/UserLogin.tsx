@@ -1,14 +1,25 @@
 import { useState } from "react";
 import './userLoginStyles.css';
+import {  useNavigate } from 'react-router-dom';
 
 const UserLogin: any = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
+
+    // const navigate = useNavigate()
 
     const login = (e: any) => {
         e.preventDefault();
-        // console.log({email, password});
+        navigate('/')
+        // return (
+        //     <Route exact path="/" render={() => (
+        //         <Redirect to="/" />
+        //     )} />
+        // )
     };
+        // console.log({email, password});
+    
 
     return (
         <div>
