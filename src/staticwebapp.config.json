@@ -2,19 +2,13 @@
     "trailingSlash": "auto",
     "routes": [
       {
-        "route": "/*"
+        "route": "/"
       },
       {
         "route": "/diary"
       },
       {
-        "route": "/diary/*"
-      },
-      {
         "route": "/myaccount"
-      },
-      {
-        "route": "/reflex/*"
       },
       {
         "route": "/reflex"
