@@ -14,7 +14,7 @@ export function App() {
         <Routes>
           <Route path="/" element = {<Home />} />
           <Route path="/userlogin" element={<UserLogin />} />
-          <Route path="/Reflex/:reflexId" element={<Reflex />} />
+          <Route path="/reflex/:reflexId" element={<Reflex />} />
           <Route path="/myaccount" element={<MyAccount />} />
           <Route path="/diary" element={<Diary />} />
         </Routes>
