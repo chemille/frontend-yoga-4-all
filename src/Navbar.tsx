@@ -28,7 +28,7 @@ export function NavBar() {
         <>
 
       <StyledNav className="navbar-container">
-        <Home to="/">
+        <Home to="/home">
           Yoga-4-All
         </Home>
             <div className="buttonContainer">
