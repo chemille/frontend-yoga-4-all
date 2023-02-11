@@ -14,7 +14,7 @@
         "route": "/reflex"
       },
       {
-        "route": "/userlogin"
+        "route": "/home"
       }
     ],
     "navigationFallback": {
