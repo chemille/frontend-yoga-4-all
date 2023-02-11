@@ -3,9 +3,7 @@ import { DiaryEntry } from '../types/entry';
 import { fetchAllEntries } from '../services/Api';
 import { DiaryForm } from '../components/DiaryForm';
 import DiaryEntries from "../components/DiaryEntries";
-import { SingleEntry } from '../components/SingleEntry';
 import axios from 'axios';
-// export{}
 
 
 export const Diary: React.FC = () => {
@@ -19,9 +17,7 @@ export const Diary: React.FC = () => {
           setEntries(entries);
       }
       fetchEntries();
-      }, [])
-    
-      console.log(entries);
+      }) // removed empty array to get the new post to render upon clicking submit
 
     const createNewEntry = (newEntry: any)=> {
       const url = "https://yoga-4-all-backend.herokuapp.com/diary";
@@ -42,7 +38,8 @@ export const Diary: React.FC = () => {
       console.log(newEntry.data);
       return newEntry.data;
       };
-    // do we need this handleAdd?? //
+
+
     const handleAdd = (e: React.FormEvent) => {
       e.preventDefault();
     
