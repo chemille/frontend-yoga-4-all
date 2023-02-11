@@ -1,17 +1,36 @@
 import { useState } from "react";
 import './userLoginStyles.css';
 import {  useNavigate } from 'react-router-dom';
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const UserLogin: any = () => {
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    // const [password, setPassword] = useState("");
     const navigate = useNavigate()
 
     const login = (e: any) => {
         e.preventDefault();
         navigate('/home')
-
     };
+
+    // Visibility for password //
+    const [values, setValues] = useState({
+        password:"",
+        showPassword: false,
+    });
+
+    const handleClickShowPassword = () => {
+        setValues({ ...values, showPassword: !values.showPassword });
+    };
+    
+    const handleMouseDownPassword = (event:any) => {
+        event.preventDefault();
+    };
+    
+    const handlePasswordChange = (props: any) => (event:any) => {
+        setValues({ ...values, [props]: event.target.value });
+    };
+
 
     return (
         <div>
@@ -29,13 +48,26 @@ const UserLogin: any = () => {
                 <br></br>
                 <label>Password:</label>
                 <input className="input input__box"
-                    value={password}
+                    // value={password}
                     id='password'
-                    type='text'
-                    placeholder='Password'
-                    onChange={e => setPassword(e.target.value)}
+                    // type='text'
+                    type={values.showPassword ? "text" : "password"}
+                    // placeholder='Password'
+                    // onChange={e => setPassword(e.target.value)}
+                    onChange={handlePasswordChange("password")}
+                    value={values.password}
                     />
                     <br></br>
+                <div>
+                    <span
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                    >
+                        <AiOutlineEye />
+                    </span>
+                    
+                </div>
+
                 <button className="input_submit" type='submit'>Login</button>
                 <button className="signup_btn" type='submit'>Sign up</button>
             </form>
