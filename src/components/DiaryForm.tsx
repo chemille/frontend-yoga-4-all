@@ -1,8 +1,5 @@
-import React, { useRef } from "react";
 import { useState } from "react";
-import { DiaryEntry } from '../types/entry';
 import axios from 'axios';
-// import "./styles.css";
 
 interface props {
   entry: string;
@@ -11,7 +8,6 @@ interface props {
 }
 
 export const DiaryForm: React.FC<props> = ({ entry, setEntry, handleAdd }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState<{entry: string, posted_at: string}>({ 
     entry: "",
     posted_at: ""
@@ -37,14 +33,9 @@ export const DiaryForm: React.FC<props> = ({ entry, setEntry, handleAdd }) => {
     .catch(error => {
         console.log(error);
     });
-    
-    // console.log(newEntry.data);
-    // return newEntry.data;
     };
 
   console.log(formData);
-
-          // inputRef.current?.blur();
 
   return (
     <form
@@ -56,7 +47,6 @@ export const DiaryForm: React.FC<props> = ({ entry, setEntry, handleAdd }) => {
         placeholder="Type your entry here."
         value={formData.entry}
         name="entry"
-        ref={inputRef}
         onChange={handleChange}
         className="input__box"
       />

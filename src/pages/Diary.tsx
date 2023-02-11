@@ -17,7 +17,9 @@ export const Diary: React.FC = () => {
           setEntries(entries);
       }
       fetchEntries();
-      }) // removed empty array to get the new post to render upon clicking submit
+      }, []); // If we have the empty array, the new entry won't show up right away when we click submit
+      // If we remove the empty array, the new entry renders upon clicking submit, but the console continues to load infinitely
+      // We tried [entry, setEntry] which makes the console stop loading, but it won't render the submitted entry right away
 
     const createNewEntry = (newEntry: any)=> {
       const url = "https://yoga-4-all-backend.herokuapp.com/diary";
