@@ -46,12 +46,16 @@ export const Diary: React.FC = () => {
       createNewEntry(FormData) // make a state to hold formData and use the setters that you get back from the state to keep track
       // then send that formData back inside of that fx
     };
+
+    // Create a toggle botton to show/hide diary form
+    const [showForm, setShowForm] = useState(true);
+    const toggleNewDiaryForm = () => {setShowForm(!showForm)}
   
     return (
       <div className="App">
         <h1 className="heading">Diary Entries Page</h1>
-        {/* <SingleEntry createNewEntry={createNewEntry} /> */}
-        <DiaryForm entry={entry} setEntry={setEntry} handleAdd={handleAdd} />
+        {showForm ? <DiaryForm entry={entry} setEntry={setEntry} handleAdd={handleAdd} /> : ''}
+        <button onClick={toggleNewDiaryForm} className='hideButton'>{showForm ? 'Hide Diary Form' : 'Show Diary Form'}</button>
         <DiaryEntries entries={entries} setEntries={setEntries} />
       </div>
     );
