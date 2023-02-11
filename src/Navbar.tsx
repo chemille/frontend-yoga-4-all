@@ -28,11 +28,11 @@ export function NavBar() {
         <>
 
       <StyledNav className="navbar-container">
- <Home to="/">
-         Yoga-4-All
+        <Home to="/">
+          Yoga-4-All
         </Home>
             <div className="buttonContainer">
-        <Button to="/">
+        <Button to="/home">
           Primitive Reflexes
         </Button>
         <Button to="/diary">Diary</Button>

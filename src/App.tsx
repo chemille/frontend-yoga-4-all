@@ -12,8 +12,8 @@ export function App() {
     <>
         <NavBar />
         <Routes>
-          <Route path="/" element = {<Home />} />
-          <Route path="/userlogin" element={<UserLogin />} />
+          <Route path="/home" element = {<Home />} />
+          <Route path="/" element={<UserLogin />} />
           <Route path="/reflex/:reflexId" element={<Reflex />} />
           <Route path="/myaccount" element={<MyAccount />} />
           <Route path="/diary" element={<Diary />} />

@@ -7,11 +7,9 @@ const UserLogin: any = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate()
 
-    console.log("Deploy Testing");
-    
     const login = (e: any) => {
         e.preventDefault();
-        navigate('/')
+        navigate('/home')
 
     };
 
