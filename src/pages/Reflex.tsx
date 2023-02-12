@@ -34,16 +34,19 @@ export const Reflex = (props: any) => {
       <div>
         <div>
           Videos:
+          {oneReflex.videos.map((video: any) => (
           <iframe
             width="560"
             height="315"
-            // src={`${oneReflex.videos}`}
-            src='https://www.youtube.com/embed/xnbfmiO_Wp4' 
+            src={`${video}`}
+            // src='https://www.youtube.com/embed/xnbfmiO_Wp4' 
             title="YouTube video player"
-            // frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            // allowfullscreen
-          ></iframe> 
+            allowFullScreen
+          ></iframe>
+        ))}
+           
       </div>
       </div>
       <div>
