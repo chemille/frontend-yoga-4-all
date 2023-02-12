@@ -64,17 +64,16 @@ function Home() {
           <div className="inside-page">
             <div className="inside-page__container">
               <h3 className="inside-page__heading inside-page__heading--city">
-                For {reflex.title}
+                For {reflex.title} ...
               </h3>
               <p className="inside-page__text">
-                As cities never sleep, there are always something going on, no
-                matter what time!
+                {/* Work on the following exercises */}
               </p>
               <a
                 href={`/reflex/${reflex.reflex_id}`} // gives you the name of the reflex as the endpoint
                 className="inside-page__btn inside-page__btn--city"
               >
-                View deals
+                Click for exercises!
               </a>
             </div>
           </div>
