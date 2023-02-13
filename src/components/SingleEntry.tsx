@@ -45,6 +45,8 @@ export const SingleEntry: React.FC<{
       });
   };
 
+  // const date = new Date(entry.posted_at);
+
   return (
     <form className="entries__single" onSubmit={(e) => handleEdit(e, entry.diary_id)}>
       {edit ? (
@@ -59,6 +61,7 @@ export const SingleEntry: React.FC<{
       ) : (
         <span className="entries__single--text">{entry.entry}</span>
       )}
+      <div>{entry.posted_at}</div> 
       <div>
         <span
           className="icon"
