@@ -28,6 +28,11 @@ export const DiaryForm: React.FC<props> = ({ entry, setEntry, handleAdd }) => {
     const url = "https://yoga-4-all-backend.herokuapp.com/diary";
     axios.post(url, { ...formData, posted_at: new Date() })
     .then(response => {
+      handleAdd(e);
+      setFormData({
+        entry: "",
+        posted_at: ""
+      });
       console.log(response.data);
     }) 
     .catch(error => {
@@ -35,7 +40,7 @@ export const DiaryForm: React.FC<props> = ({ entry, setEntry, handleAdd }) => {
     });
     };
 
-  console.log(formData);
+  // console.log(formData);
 
   return (
     <form
