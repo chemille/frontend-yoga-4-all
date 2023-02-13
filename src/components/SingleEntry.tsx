@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { DiaryEntry } from "../types/entry";
+// import { DiaryForm } from "./DiaryForm";
 import axios from 'axios';
 import "./diaryStyles.css";
 
@@ -58,8 +59,8 @@ export const SingleEntry: React.FC<{
       ) : (
         <span className="entries__single--text">{entry.entry}</span>
       )}
-      {/* The div below prints the date, but does not keep the original date */}
-      <div>{entry.posted_at}</div> 
+      {/* Call the helper function for formatting timestamp */}
+      <div>{entry.posted_at.toString().slice(0, 16)}</div> 
       <div>
         <span
           className="icon"
