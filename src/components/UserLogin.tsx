@@ -34,10 +34,13 @@ const UserLogin: any = () => {
 
     return (
         <div>
+            <br></br>
+            <br></br>
             <h2>Login to your account</h2>
             <br></br>
             <form onSubmit={login}>
                 <label>Email:</label>
+                <br></br>
                 <input className="input input__box"
                     value={email}
                     id='email'
@@ -47,6 +50,7 @@ const UserLogin: any = () => {
                     />
                 <br></br>
                 <label>Password:</label>
+                <br></br>
                 <input className="input input__box"
                     // value={password}
                     id='password'
