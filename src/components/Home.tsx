@@ -4,16 +4,11 @@ import { useState, useEffect } from "react";
 import { fetchReflexData } from "../services/Api";
 import { MultipleReflexes } from "../types/reflex";
 import downwardDog from "../resources/downwardDog.jpg";
-import styled from "styled-components";
-
-
-
-
-
+// import styled from "styled-components";
 
 function Home() {
   const [reflexData, setReflexData] = useState<MultipleReflexes[] | null>();
-  // {id: number, title: string}
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchReflexData()
@@ -22,14 +17,10 @@ function Home() {
     fetchData();
   }, [])
 
-  console.log("reflexData", reflexData);
-  
-
   return (
     <>
     <section className="card-section">
-    {reflexData
-                      ? reflexData.map((reflex) => {
+    {reflexData ? reflexData.map((reflex) => {
     return  (
         <div className="card">
           <div className="flip-card">
@@ -37,16 +28,9 @@ function Home() {
               <div className="card-front">
                 <div className="card-front__tp card-front__tp--city">
                   <div className="cardFont">
-                    {/* {reflexData
-                      ? reflexData.map((reflex) => { */}
-                        <p>{reflex.title}</p>
-                        {/* })
-                      : null} */}
-                    {/* Need map through cards*/}
+                    <p>{reflex.title}</p>
                   </div>
-
-                </div>
-        
+                </div>        
                 <div className="card-front__bt">
                   <p className="card-front__text-view card-front__text-view--city">
                     View me
@@ -66,11 +50,8 @@ function Home() {
               <h3 className="inside-page__heading inside-page__heading--city">
                 For {reflex.title} ...
               </h3>
-              <p className="inside-page__text">
-                {/* Work on the following exercises */}
-              </p>
-              <a
-                href={`/reflex/${reflex.reflex_id}`} // gives you the name of the reflex as the endpoint
+              <p className="inside-page__text"></p>
+              <a href={`/reflex/${reflex.reflex_id}`} 
                 className="inside-page__btn inside-page__btn--city"
               >
                 Click for exercises!

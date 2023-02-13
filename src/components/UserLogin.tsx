@@ -1,11 +1,10 @@
 import { useState } from "react";
 import './userLoginStyles.css';
 import {  useNavigate } from 'react-router-dom';
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { AiOutlineEye } from "react-icons/ai";
 
 const UserLogin: any = () => {
     const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
     const navigate = useNavigate()
 
     const login = (e: any) => {
@@ -52,12 +51,9 @@ const UserLogin: any = () => {
                 <label>Password:</label>
                 <br></br>
                 <input className="input input__box"
-                    // value={password}
                     id='password'
-                    // type='text'
                     type={values.showPassword ? "text" : "password"}
-                    // placeholder='Password'
-                    // onChange={e => setPassword(e.target.value)}
+                    placeholder='Password'
                     onChange={handlePasswordChange("password")}
                     value={values.password}
                     />

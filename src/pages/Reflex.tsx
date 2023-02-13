@@ -1,4 +1,3 @@
-import Home from "../components/Home";
 import { SingleReflex } from "../types/reflex";
 import { useState, useEffect } from "react";
 import { fetchOneReflex } from "../services/Api";
@@ -20,10 +19,8 @@ export const Reflex = (props: any) => {
     getOneReflex();
   }, []);
 
-
-
   if (oneReflex === undefined) {
-    return <div>Loading...</div>; // loading will be an error msg
+    return <div>Loading...</div>; 
   }
 
   return (

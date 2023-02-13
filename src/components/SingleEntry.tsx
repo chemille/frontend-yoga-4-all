@@ -37,15 +37,12 @@ export const SingleEntry: React.FC<{
     axios
       .delete(url)
       .then(() => {
-        // setEntries(entries.filter((entry) => entry.diary_id !== id));
         setEntries((entries) => entries.filter((entry) => entry.diary_id !== id));
       })
       .catch((error) => {
         console.log(error);
       });
   };
-
-  // const date = new Date(entry.posted_at);
 
   return (
     <form className="entries__single" onSubmit={(e) => handleEdit(e, entry.diary_id)}>
@@ -61,6 +58,7 @@ export const SingleEntry: React.FC<{
       ) : (
         <span className="entries__single--text">{entry.entry}</span>
       )}
+      {/* The div below prints the date, but does not keep the original date */}
       <div>{entry.posted_at}</div> 
       <div>
         <span

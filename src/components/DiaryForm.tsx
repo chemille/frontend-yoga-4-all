@@ -17,10 +17,9 @@ export const DiaryForm: React.FC<props> = ({ entry, setEntry, handleAdd }) => {
     setFormData(prevFormData => {
       return { 
         ...prevFormData,
-        [e.target.name]: e.target.value // we're going use the event target info in order to 
-        //dynamically update our formData
+        [e.target.name]: e.target.value 
       }
-    }) // just references the formData on line15
+    }) 
   }
 
   const createNewEntry = (e: any)=> {
@@ -39,8 +38,6 @@ export const DiaryForm: React.FC<props> = ({ entry, setEntry, handleAdd }) => {
         console.log(error);
     });
     };
-
-  // console.log(formData);
 
   return (
     <form

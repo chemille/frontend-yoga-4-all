@@ -1,4 +1,4 @@
-export interface SingleReflex { // previously ReflexList
+export interface SingleReflex { 
     reflex_id: number;
     title: string;
     videos: Array<string>;
