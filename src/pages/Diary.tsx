@@ -4,6 +4,7 @@ import { fetchAllEntries } from '../services/Api';
 import { DiaryForm } from '../components/DiaryForm';
 import DiaryEntries from "../components/DiaryEntries";
 import axios from 'axios';
+import './stylesDiary.css';
 
 
 export const Diary: React.FC = () => {
@@ -45,10 +46,16 @@ export const Diary: React.FC = () => {
   
     return (
       <div className="App">
-        <h1 className="heading">Diary Entries Page</h1>
+        <h1 className="center-header">Diary Entries Page
+        <button
+          className='hide-button'
+          onClick={toggleNewDiaryForm}>{showForm ? '➖' : '➕'}
+        </button>
+        </h1>
         {showForm ? <DiaryForm entry={entry} setEntry={setEntry} handleAdd={handleAdd} /> : ''}
-        <button onClick={toggleNewDiaryForm} className='hideButton'>{showForm ? 'Hide Diary Form' : 'Show Diary Form'}</button>
+        <div className="diary-entries-container">
         <DiaryEntries entries={entries} setEntries={setEntries} />
+        </div>
       </div>
     );
   };

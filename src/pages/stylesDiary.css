@@ -1,0 +1,15 @@
+.center-header {
+    display: flex;
+    justify-content: center;
+}
+
+.diary-entries-container {
+    display: flex;
+    justify-content: center;
+}
+
+.hide-button {
+    justify-content: right;
+    font-size: 30px;
+    margin-left: 2em;
+}
