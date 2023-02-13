@@ -4,6 +4,10 @@ h2, label {
   position: relative;
   margin-left: 100px;
 }
+.flex {
+  display: flex;
+  position: relative;
+}
 
 .input {
   display: flex;
@@ -38,6 +42,35 @@ h2, label {
   box-shadow: 0 0 10px black;
 }
 
+.signup_btn {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  margin-left: 100px;
+  border-radius: 15px;
+  right: 0px;
+  border: none;
+  font-size: 20px;
+  background-color: #2f74c0;
+  color: white;
+  transition: 0.2s all;
+  box-shadow: 0 0 10px black;
+}
+.theEye {
+  position: relative;
+  display: flex;
+  margin-top:22px;
+  margin-left: 10px;
+  justify-content: baseline;
+  border-radius: 15px;
+  right: 0px;
+  border: none;
+  font-size: 20px;
+  background-color: #ffffff;
+  color: black;
+  transition: 0.2s all;
+  box-shadow: 0 0 10px black;
+}
 .signup_btn {
   position: relative;
   width: 150px;

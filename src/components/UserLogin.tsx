@@ -50,6 +50,7 @@ const UserLogin: any = () => {
                 <br></br>
                 <label>Password:</label>
                 <br></br>
+                 <div className="flex">
                 <input className="input input__box"
                     id='password'
                     type={values.showPassword ? "text" : "password"}
@@ -57,16 +58,17 @@ const UserLogin: any = () => {
                     onChange={handlePasswordChange("password")}
                     value={values.password}
                     />
-                    <br></br>
-                <div>
+                    
+               
                     <span
                         onClick={handleClickShowPassword}
                         onMouseDown={handleMouseDownPassword}
                     >
-                        <AiOutlineEye />
+                        <AiOutlineEye className="theEye" />
                     </span>
                     
                 </div>
+                    <br></br>
 
                 <button className="input_submit" type='submit'>Login</button>
                 <button className="signup_btn" type='submit'>Sign up</button>
