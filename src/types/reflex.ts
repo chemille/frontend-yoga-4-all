@@ -8,4 +8,5 @@ export interface SingleReflex {
   export interface MultipleReflexes {
     reflex_id: number;
     title: string;
+    image: string;
   }
