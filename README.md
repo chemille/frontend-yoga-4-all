@@ -20,6 +20,10 @@ HTML: The standard markup language for creating web pages.
 
 CSS: The styling language used to design the visual presentation of the application.
 
+Microsoft Azure: A global cloud platform for hosting and managing applications.
+
+Github Actions: CI/CD pipeline from Git-based version control system that can build, test, and maintain development.
+
 # Features
 
 Interactive Interface: User-friendly interface to navigate and interact with the application.
