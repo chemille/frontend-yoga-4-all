@@ -70,6 +70,6 @@ Yoga-4-All was designed and developed by Farrah and Michelle.
 
 Farrah's Github --> https://github.com/Farrah-Unger
 
-Backend-yoga-4-all --> https://github.com/Farrah-Unger/backend-yoga-4-all
+Backend-yoga-4-all --> https://github.com/Farrah-Unger/Capstone-Yoga-4-All-Backend
 
 Michelle's Github --> https://github.com/chemille
